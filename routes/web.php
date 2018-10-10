@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function ()
+Route::get('/{feed}', function ()
 {
     return view('feed');
-})->middleware('auth');
+})->where('feed', '(|feed)')->middleware('auth');; // the pipe denotes 'or', in this case meaning '/' or '/feed'
 
 Route::get('/home', function()
 {
