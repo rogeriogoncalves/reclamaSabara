@@ -13,12 +13,8 @@
 
 Route::get('/', function ()
 {
-
-    if (Auth::check()) {
-        // The user is logged in...
-    }
     return view('feed');
-});
+})->middleware('auth');
 
 Route::get('/home', function()
 {
