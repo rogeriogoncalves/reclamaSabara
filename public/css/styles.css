@@ -8,3 +8,8 @@ body
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.navbar-brand > img
+{
+    width: 100px;
+}
