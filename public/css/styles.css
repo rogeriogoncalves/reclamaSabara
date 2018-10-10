@@ -1,0 +1,10 @@
+html, body
+{
+    height: 100%;
+}
+body
+{
+    background-image: url('/assets/images/sabara-fundo.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

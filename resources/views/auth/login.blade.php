@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('styles')
-<link href="{{ asset('css/homepage.css') }}" rel="stylesheet">
-@endsection
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

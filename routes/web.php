@@ -13,7 +13,11 @@
 
 Route::get('/', function ()
 {
-    return view('welcome');
+
+    if (Auth::check()) {
+        // The user is logged in...
+    }
+    return view('feed');
 });
 
 Route::get('/home', function()
