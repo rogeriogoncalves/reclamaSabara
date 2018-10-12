@@ -16,10 +16,8 @@ Route::get('/{feed}', function ()
     return view('feed');
 })->where('feed', '(|feed)')->middleware('auth');; // the pipe denotes 'or', in this case meaning '/' or '/feed'
 
-Route::get('/home', function()
-{
-    return view('homepage');
-});
+Route::resource('/', 'CadastroController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
