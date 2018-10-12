@@ -22,4 +22,4 @@ Route::get('/cadastrareclamacao',"CadastroController@cadastrareclamacao")->name(
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'CadastroController@index')->name('home');
