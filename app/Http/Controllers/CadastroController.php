@@ -18,19 +18,23 @@ class CadastroController extends Controller
     
     public function __construct(reclamasabara $cadastro)
     {
-        
         $this->cadastro = $cadastro;
-    }
-    
-    public function construct()
-    {
-        $this->middleware('auth');
-        //$this->reclamacao = reclamacao;
     }
     
     public function index()
     {
         return view('home');
+    }
+    
+    function cadastrareclamacao()
+    {
+        return view("cadastrareclamacao");
+    }
+    
+    function listarcadastro(reclamasabara $cadastro)
+    {
+        $relatorios = $cadastro->all();
+        return view("listarCadastro", compact('relatorios'));
     }
 
     /**
@@ -40,7 +44,7 @@ class CadastroController extends Controller
      */
     public function create()
     {
-        return view ('cadastro');
+        ///
     }
 
     /**
@@ -54,23 +58,20 @@ class CadastroController extends Controller
         ///Pega todos os dados que vem do formulario
         $dataForm = $request->all();
         
-        //dd = Dump and Die, uso ele como debugger, ele pega as informações do meu formulario e mostra na tela
         ///dd($dataForm);
         
-                /*///Pega data no momento da inserção EX: 09/10/2018 15:26:30
-        date_default_timezone_set('America/Sao_Paulo');
-        $request->create_at = date('d/m/Y H:i:s', time());
-        $request->update_at = $request->create_at; */
-        
-        ///Validação dos dados do formulario 
+        ///Valida os dados de acordo com as regras que criei na model
+        ///Imprime as mensagens personalizadas de acordo com o que defini na model
         $this->validate($request, $this->cadastro->rules, $this->cadastro->messages);
         
+        ///Insere no banco de dados
         $insert = $this->cadastro->create($dataForm);
         
         if($insert)
-            return redirect()->route('index');
+            return redirect()->route('listarcadastro');
         else 
             return redirect()->back();
+
     }
 
     /**

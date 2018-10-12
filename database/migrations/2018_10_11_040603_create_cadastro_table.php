@@ -13,13 +13,15 @@ class CreateCadastroTable extends Migration
      */
     public function up()
     {
-        Schema::create('Cadastro', function (Blueprint $table) {
+        Schema::create('reclamasabaras', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('classe',50);
-            $table->integer('rankingMais'); 
-            $table->integer('rankingMenos');
-            $table->string('user',120);
+            $table->string('reclamacao',140);
+            $table->integer('rankingMais')->nullable(); 
+            $table->integer('rankingMenos')->nullable();
+            $table->string('user',120)->nullable();
             $table->timestamps();
+            
+            $table->engine = 'InnoDB';
         });
     }
 
@@ -30,6 +32,6 @@ class CreateCadastroTable extends Migration
      */
     public function down()
     {
-        ///Schema::dropIfExists('Cadastro');
+        ///Schema::dropIfExists('reclamasabara');
     }
 }

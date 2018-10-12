@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,7 +11,7 @@ class reclamasabara extends Model
     
         public $rules = [
             'reclamacao'   => 'required| min:3 | max:140',
-            'usuResponsavelCadastro' => 'required'
+            ///'usuResponsavelCadastro' => 'required'
         ];
         
         public $messages = [

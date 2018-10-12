@@ -17,6 +17,8 @@ Route::get('/{feed}', function ()
 })->where('feed', '(|feed)')->middleware('auth');; // the pipe denotes 'or', in this case meaning '/' or '/feed'
 
 Route::resource('/', 'CadastroController');
+Route::get('/listarcadastro',"CadastroController@listarcadastro")->name('listarcadastro');
+Route::get('/cadastrareclamacao',"CadastroController@cadastrareclamacao")->name('cadastrareclamacao');
 
 Auth::routes();
 
