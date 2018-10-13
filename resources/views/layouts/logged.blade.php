@@ -98,27 +98,12 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="sidebar-dropdown">
+                        <li>
                             <a href="#">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span>E-commerce</span>
+                                <i class="fa fa-plus-square"></i>
+                                <span>Fazer Reclamação</span>
                                 <span class="badge badge-pill badge-primary">3</span>
                             </a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li>
-                                        <a href="#">Products
-
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Credit cart</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                         <li class="sidebar-dropdown">
                             <a href="#">
