@@ -37,7 +37,10 @@
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content pt-5">
                 <div class="sidebar-brand">
-                    <a href="#">pro sidebar</a>
+                    <a href="/">
+                        <img src="{{ asset('images/logo-branco.png') }}"/>
+                    </a>
+                    
                     <div id="close-sidebar">
                         <i class="fas fa-times"></i>
                     </div>

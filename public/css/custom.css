@@ -220,6 +220,9 @@ body {
 
 /*--------------------sidebar-brand----------------------*/
 
+.sidebar-wrapper .sidebar-brand img {
+    width: 160px;
+}
 .sidebar-wrapper .sidebar-brand {
     padding: 10px 20px;
     display: flex;
