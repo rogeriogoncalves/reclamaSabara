@@ -11,15 +11,16 @@
 |
 */
 
-Route::get('/{feed}', function ()
-{
-    return view('feed');
-})->where('feed', '(|feed)')->middleware('auth');; // the pipe denotes 'or', in this case meaning '/' or '/feed'
+// The pipe below denotes 'or', in this case meaning '/' or '/feed'
+Route::get('/{feed}', 'FeedController@carregaFeed')->where('feed', '(|feed)')->middleware('auth');
+
+// Route::get('/{feed}', function ()
+// {
+//     return view('feed');
+// })->where('feed', '(|feed)')->middleware('auth');; // the pipe denotes 'or', in this case meaning '/' or '/feed'
 
 Route::resource('/', 'CadastroController');
 Route::get('/listarcadastro',"CadastroController@listarcadastro")->name('listarcadastro');
 Route::get('/cadastrareclamacao',"CadastroController@cadastrareclamacao")->name('cadastrareclamacao');
-
-Auth::routes();
-
 Route::get('/home', 'CadastroController@index')->name('home');
+Auth::routes();

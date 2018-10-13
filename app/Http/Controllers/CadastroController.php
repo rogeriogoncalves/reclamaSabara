@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Models\reclamasabara;
+use Illuminate\Support\Facades\DB;
 
 class CadastroController extends Controller
 {
@@ -33,8 +34,9 @@ class CadastroController extends Controller
     
     function listarcadastro(reclamasabara $cadastro)
     {
-        $relatorios = $cadastro->all();
-        return view("listarCadastro", compact('relatorios'));
+        $reclamacoes = DB::select('SELECT * FROM reclamacoes;');
+        // $relatorios = $cadastro->all();
+        return view("listarCadastro", compact('reclamacoes'));
     }
 
     /**

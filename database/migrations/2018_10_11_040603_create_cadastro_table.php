@@ -13,9 +13,9 @@ class CreateCadastroTable extends Migration
      */
     public function up()
     {
-        Schema::create('reclamasabaras', function (Blueprint $table) {
+        Schema::create('reclamacoes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('reclamacao',140);
+            $table->string('conteudoReclamacao',140);
             $table->integer('rankingMais')->nullable(); 
             $table->integer('rankingMenos')->nullable();
             $table->string('user',120)->nullable();

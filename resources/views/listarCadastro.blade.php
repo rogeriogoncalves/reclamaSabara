@@ -12,12 +12,12 @@
             <th>Thumbs DOWN  </th>
             
         </tr>
-        @foreach ($relatorios as $relatorio)
+        @foreach ($reclamacoes as $reclamacao)
         <tr>
-            <td>  {{$relatorio->id}}</td>
-            <td>{{$relatorio->reclamacao}}</td>
-            <td>{{$relatorio->rankingMais}}</td>
-            <td>{{$relatorio->rankingMenos}}</td>
+            <td>  {{$reclamacao->id}}</td>
+            <td>{{$reclamacao->conteudoReclamacao}}</td>
+            <td>{{$reclamacao->rankingMais}}</td>
+            <td>{{$reclamacao->rankingMenos}}</td>
         </tr>
         @endforeach
     </table>

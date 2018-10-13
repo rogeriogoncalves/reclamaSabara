@@ -17,7 +17,7 @@
         {!! csrf_field() !!}
         
         <div class="form-group">
-            <p><b>Reclamação:</b><input type="text" name="reclamacao" placeholder="Reclamação" class="form-control"></p>
+            <p><b>Reclamação:</b><input type="text" name="conteudoReclamacao" placeholder="Reclamação" class="form-control"></p>
         </div>
         
         <button class="btn btn-primary">Enviar</button>
