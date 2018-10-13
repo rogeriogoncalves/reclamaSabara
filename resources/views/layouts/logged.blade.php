@@ -47,8 +47,8 @@
                         <img class="img-responsive img-rounded" src="{{ asset('images/feed/user.jpg') }}" alt="User picture">
                     </div>
                     <div class="user-info">
-                        <span class="user-name">Jhon
-                            <strong>Smith</strong>
+                        <span class="user-name">
+                            <strong>{{ Auth::user()->name }}</strong>
                         </span>
                         <span class="user-role">Administrator</span>
                         <span class="user-status">
@@ -56,7 +56,8 @@
                             <span>Online</span>
                         </span>
                     </div>
-                </div>
+                </div>                
+
                 <!-- sidebar-header  -->
                 <div class="sidebar-search">
                     <div>
@@ -72,7 +73,24 @@
                 </div>
                 <!-- sidebar-search  -->
                 <div class="sidebar-menu">
+                <!-- sidebar-session-options -->
                     <ul>
+                        <li class="header-menu">
+                            <span>Sessão</span>
+                        </li>
+                        <li>
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Sair</span>
+                            </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                        </li>
+
                         <li class="header-menu">
                             <span>General</span>
                         </li>
@@ -99,7 +117,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('cadastrareclamacao')}}">
                                 <i class="fa fa-plus-square"></i>
                                 <span>Fazer Reclamação</span>
                                 <span class="badge badge-pill badge-primary">3</span>
@@ -130,53 +148,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#">
-                                <i class="fa fa-chart-line"></i>
-                                <span>Charts</span>
-                            </a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li>
-                                        <a href="#">Pie chart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Line chart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Bar chart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Histogram</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#">
-                                <i class="fa fa-globe"></i>
-                                <span>Maps</span>
-                            </a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li>
-                                        <a href="#">Google maps</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Open street map</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="header-menu">
-                            <span>Extra</span>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-calendar"></i>
-                                <span>Calendar</span>
-                            </a>
-                        </li>
+                        
                         <li>
                             <a href="#">
                                 <i class="fa fa-folder"></i>
@@ -268,7 +240,7 @@
                                 </div>
                                 <div class="content">
                                     <div class="message-title">
-                                        <strong> Jhon doe</strong>
+                                        <strong> {{ Auth::user()->name }} </strong>
                                     </div>
                                     <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
                                 </div>
@@ -282,7 +254,7 @@
                                 </div>
                                 <div class="content">
                                     <div class="message-title">
-                                        <strong> Jhon doe</strong>
+                                        <strong> {{ Auth::user()->name }}</strong>
                                     </div>
                                     <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
                                 </div>
@@ -296,7 +268,7 @@
                                 </div>
                                 <div class="content">
                                     <div class="message-title">
-                                        <strong> Jhon doe</strong>
+                                        <strong> {{ Auth::user()->name }}</strong>
                                     </div>
                                     <div class="message-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo</div>
                                 </div>
@@ -319,7 +291,10 @@
                     </div>
                 </div>
                 <div>
-                    <a href="#">
+
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
                         <i class="fa fa-power-off"></i>
                     </a>
                 </div>
