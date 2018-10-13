@@ -16,13 +16,8 @@ class FeedController extends Controller
      */
     public function carregaFeed(Request $request)
     {
-        $reclamacoes = DB::select('SELECT * FROM reclamacoes;');
+        $reclamacoes = DB::select('SELECT * FROM reclamacoes;');        
         
-        foreach ($reclamacoes as $reclamacao) {
-            error_log($reclamacao->conteudoReclamacao);
-        }
-        
-        
-        return view('feed');
+        return view('feed', compact('reclamacoes'));
     }
 }
