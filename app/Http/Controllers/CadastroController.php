@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Models\reclamasabara;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CadastroController extends Controller
 {
@@ -57,10 +58,11 @@ class CadastroController extends Controller
      */
     public function store(Request $request)
     {
-        ///Pega todos os dados que vem do formulario
+        ///Pega todos os dados que vem do formulario e inclui o id do usuário logado
         $dataForm = $request->all();
         
-        ///dd($dataForm);
+        $nomeUsuario = Auth::user()->name;
+        $dataForm = array_merge($dataForm, compact('nomeUsuario'));
         
         ///Valida os dados de acordo com as regras que criei na model
         ///Imprime as mensagens personalizadas de acordo com o que defini na model
@@ -70,7 +72,7 @@ class CadastroController extends Controller
         $insert = $this->cadastro->create($dataForm);
         
         if($insert)
-            return redirect()->route('listarcadastro');
+            return redirect()->route('feed','/');
         else 
             return redirect()->back();
 

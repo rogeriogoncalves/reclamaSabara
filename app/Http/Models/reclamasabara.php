@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class reclamasabara extends Model
 {
-     protected $fillable = ['conteudoReclamacao', 'usuResponsavelCadastro', 'rankingMais', 'rankingMenos', 'create_at', 'update_at'];
-    ///protected $guarded = ['usuResponsavelCadastro']; 
+     protected $fillable = ['conteudoReclamacao', 'nomeUsuario', 'rankingMais', 'rankingMenos', 'create_at', 'update_at'];
+    // protected $guarded = ['idUsuario']; 
     
         public $rules = [
             'conteudoReclamacao'   => 'required| min:3 | max:140',
