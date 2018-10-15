@@ -1,6 +1,7 @@
 @extends('layouts.logged')
 
 @section('content')
+    <h2>Reclamações Recentes</h2>
 
     <div class="my-auto py-2 rounded shadow-sm">
         @if($reclamacoes)

@@ -1,9 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=K2D");
+
 html, body
 {
     height: 100%;
 }
 body
 {
+    font-size: .9rem;
+    font-family: 'K2D', sans-serif;
     background-image: url('/images/sabara-fundo.JPG');
     background-repeat: no-repeat;
     background-size: cover;
