@@ -4,7 +4,7 @@ html, body
 }
 body
 {
-    background-image: url('/assets/images/sabara-fundo.JPG');
+    background-image: url('/images/sabara-fundo.JPG');
     background-repeat: no-repeat;
     background-size: cover;
 }
