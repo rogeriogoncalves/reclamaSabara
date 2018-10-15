@@ -1,9 +1,9 @@
 @extends('layouts.logged')
 
 @section('content')
-<div class="container-fluid" style="margin-left: 100px; margin-top: 100px">
+<div class="container-fluid mt-2 pt-1 mt-md-3 pt-md-3">
 
-<h1 class ="title"><a href="{{route('index')}}"><span style="font-size: 28px" class="glyphicon glyphicon-circle-arrow-left"></span></a>  Cadastro de Reclamações</h1>
+<h1 class ="title w-100 text-center  "><a href="{{route('index')}}"></a>Cadastro de Reclamações</h1>
     
     @if(isset($errors) && count($errors) > 0)
     <div class="alert alert-danger">
@@ -12,16 +12,18 @@
         @endforeach
     </div>
     @endif
-    <form class="form" method="post" action="{{route('store')}}"> 
-        
-        {!! csrf_field() !!}
-        
-        <div class="form-group">
-            <p><b>Reclamação:</b><input type="text" name="conteudoReclamacao" placeholder="Reclamação" class="form-control"></p>
-        </div>
-        
-        <button class="btn btn-primary">Enviar</button>
-    </form>
+    
+    <div class="form-group col-md-12 mt-3 pt-3">
+        <form class="form" method="post" action="{{route('store')}}">
+            {!! csrf_field() !!}
+            <div class="form-group">
+                <p><b>Reclamação:</b><input type="text" name="conteudoReclamacao" placeholder="Reclamação" class="form-control"></p>
+            </div>
+            <div class="w-100 text-center">
+                <button class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 @endsection
