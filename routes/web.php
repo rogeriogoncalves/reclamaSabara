@@ -16,5 +16,4 @@ Route::resource('/', 'FeedController')->middleware('auth');
 Route::get('/listarcadastro',"CadastroController@listarcadastro")->name('listarcadastro');
 Route::get('/reclamar',"CadastroController@show")->name('reclamarView');
 Route::post('/cadastrareclamacao',"CadastroController@store")->name('cadastrarReclamacao');
-Route::get('/home', 'CadastroController@index')->name('home');
 Auth::routes();
