@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\reclamasabara;
+use App\Http\Models\reclamacoes;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +18,7 @@ class CadastroController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function __construct(reclamasabara $cadastro)
+    public function __construct(reclamacoes $cadastro)
     {
         $this->cadastro = $cadastro;
     }
@@ -28,13 +28,10 @@ class CadastroController extends Controller
         return view('home');
     }
     
-    function cadastrareclamacao()
-    {
-        return view("cadastrareclamacao");
-    }
     
-    function listarcadastro(reclamasabara $cadastro)
+    function listarcadastro(reclamacoes $cadastro)
     {
+        dd(Auth::user()->name);
         $reclamacoes = DB::select('SELECT * FROM reclamacoes;');
         // $relatorios = $cadastro->all();
         return view("listarCadastro", compact('reclamacoes'));
@@ -60,7 +57,6 @@ class CadastroController extends Controller
     {
         ///Pega todos os dados que vem do formulario e inclui o id do usuário logado
         $dataForm = $request->all();
-        
         $nomeUsuario = Auth::user()->name;
         $dataForm = array_merge($dataForm, compact('nomeUsuario'));
         
@@ -79,14 +75,14 @@ class CadastroController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Retorna a view com o form para inserção de reclamações.
      *
-     * @param  int  $id
+     * @param  none
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view("cadastrareclamacao");
     }
 
     /**

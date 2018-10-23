@@ -12,10 +12,9 @@
 */
 
 // The pipe below denotes 'or', in this case meaning '/' or '/feed'
-Route::get('/{feed}', 'FeedController@carregaFeed')->where('feed', '(|feed)')->middleware('auth')->name('feed');
-
-Route::resource('/', 'CadastroController');
+Route::resource('/', 'FeedController')->middleware('auth');
 Route::get('/listarcadastro',"CadastroController@listarcadastro")->name('listarcadastro');
-Route::get('/cadastrareclamacao',"CadastroController@cadastrareclamacao")->name('cadastrareclamacao');
+Route::get('/reclamar',"CadastroController@show")->name('reclamarView');
+Route::post('/cadastrareclamacao',"CadastroController@store")->name('cadastraRfeclamacao');
 Route::get('/home', 'CadastroController@index')->name('home');
 Auth::routes();

@@ -4,7 +4,7 @@ namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class reclamasabara extends Model
+class reclamacoes extends Model
 {
      protected $fillable = ['conteudoReclamacao', 'nomeUsuario', 'rankingMais', 'rankingMenos', 'create_at', 'update_at'];
     // protected $guarded = ['idUsuario']; 
