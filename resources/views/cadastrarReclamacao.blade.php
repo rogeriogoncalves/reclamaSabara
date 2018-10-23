@@ -17,7 +17,7 @@
         <form class="form" method="post" action="{{route('cadastrarReclamacao')}}">
             {!! csrf_field() !!}
             <div class="form-group">
-                <p><b>Reclamação:</b><input type="text" name="conteudoReclamacao" placeholder="Reclamação" class="form-control"></p>
+                <p><b>Reclamação:</b><input type="text" name="conteudoReclamacao" placeholder="Reclamação" class="form-control" autofocus></p>
             </div>
             <div class="w-100 text-center">
                 <button class="btn btn-primary">Enviar</button>

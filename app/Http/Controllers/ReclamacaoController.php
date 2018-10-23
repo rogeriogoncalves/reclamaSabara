@@ -8,7 +8,7 @@ use App\Http\Models\reclamacoes;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-class CadastroController extends Controller
+class ReclamacaoController extends Controller
 {
     
     private $cadastro;
@@ -25,7 +25,7 @@ class CadastroController extends Controller
     
     public function index()
     {
-        return view('home');
+        return $this->show();
     }
 
     /**
@@ -59,7 +59,7 @@ class CadastroController extends Controller
         $insert = $this->cadastro->create($dataForm);
         
         if($insert)
-            return redirect()->route('feed','/');
+            return redirect()->action('FeedController@index');
         else 
             return redirect()->back();
 

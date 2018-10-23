@@ -17,7 +17,7 @@
         @else
             <div class="text-center">
                 <strong class="p-4 p-md-2 d-block text-dark ">Nenhuma reclamação encontrada, será que Sabará está mesmo tão boa assim?</strong>
-                <a href="{{route('reclamarView')}}" class="btn btn-dark mt-3">
+                <a href="/reclamar" class="btn btn-dark mt-3">
                     <i class="fa fa-plus-square pr-2"></i> Quero reclamar!
                 </a>
             </div>

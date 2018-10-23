@@ -117,7 +117,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="{{route('reclamarView')}}">
+                            <a href="/reclamar">
                                 <i class="fa fa-plus-square"></i>
                                 <span>Fazer Reclamação</span>
                                 <span class="badge badge-pill badge-primary">3</span>
