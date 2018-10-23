@@ -13,7 +13,6 @@
 
 // The pipe below denotes 'or', in this case meaning '/' or '/feed'
 Route::resource('/', 'FeedController')->middleware('auth');
-Route::get('/listarcadastro',"CadastroController@listarcadastro")->name('listarcadastro');
 Route::get('/reclamar',"CadastroController@show")->name('reclamarView');
 Route::post('/cadastrareclamacao',"CadastroController@store")->name('cadastrarReclamacao');
 Auth::routes();

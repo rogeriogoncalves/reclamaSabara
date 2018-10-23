@@ -27,15 +27,6 @@ class CadastroController extends Controller
     {
         return view('home');
     }
-    
-    
-    function listarcadastro(reclamacoes $cadastro)
-    {
-        dd(Auth::user()->name);
-        $reclamacoes = DB::select('SELECT * FROM reclamacoes;');
-        // $relatorios = $cadastro->all();
-        return view("listarCadastro", compact('reclamacoes'));
-    }
 
     /**
      * Show the form for creating a new resource.
