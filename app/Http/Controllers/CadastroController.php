@@ -82,7 +82,7 @@ class CadastroController extends Controller
      */
     public function show()
     {
-        return view("cadastrareclamacao");
+        return view("cadastrarReclamacao");
     }
 
     /**

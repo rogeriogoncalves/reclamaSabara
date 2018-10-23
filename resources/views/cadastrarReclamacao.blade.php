@@ -14,7 +14,7 @@
     @endif
     
     <div class="form-group col-md-12 mt-3 pt-3">
-        <form class="form" method="post" action="{{route('cadastraRfeclamacao')}}">
+        <form class="form" method="post" action="{{route('cadastrarReclamacao')}}">
             {!! csrf_field() !!}
             <div class="form-group">
                 <p><b>Reclamação:</b><input type="text" name="conteudoReclamacao" placeholder="Reclamação" class="form-control"></p>
