@@ -19,8 +19,10 @@
             <div class="form-group">
                 <p><b>Reclamação:</b><input type="text" name="conteudoReclamacao" placeholder="Reclamação" class="form-control" autofocus></p>
             </div>
-            <div class="w-100 text-center">
-                <button class="btn btn-primary">Enviar</button>
+            <div class="text-center">
+                <button class="btn btn-dark mt-3">
+                    <i class="fa fa-plus-square pr-2"></i> Enviar reclamação!
+                </button>
             </div>
         </form>
     </div>
