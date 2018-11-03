@@ -15,8 +15,8 @@ class ComposerStaticInite98da5580333a41d1d2f6b337b1cf066
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
     );
 
@@ -84,6 +84,7 @@ class ComposerStaticInite98da5580333a41d1d2f6b337b1cf066
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'LaravelLegends\\PtBrValidator\\' => 29,
         ),
         'J' => 
         array (
@@ -127,8 +128,8 @@ class ComposerStaticInite98da5580333a41d1d2f6b337b1cf066
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -250,6 +251,10 @@ class ComposerStaticInite98da5580333a41d1d2f6b337b1cf066
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'LaravelLegends\\PtBrValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravellegends/pt-br-validator/src/pt-br-validator',
+        ),
         'JakubOnderka\\PhpConsoleColor\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
@@ -347,9 +352,9 @@ class ComposerStaticInite98da5580333a41d1d2f6b337b1cf066
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
-        'App\\Http\\Controllers\\ReclamacaoController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReclamacaoController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\FeedController' => __DIR__ . '/../..' . '/app/Http/Controllers/FeedController.php',
+        'App\\Http\\Controllers\\ReclamacaoController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReclamacaoController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -358,7 +363,9 @@ class ComposerStaticInite98da5580333a41d1d2f6b337b1cf066
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Models\\Cadastro' => __DIR__ . '/../..' . '/app/Http/Models/Cadastro.php',
+        'App\\Http\\Middleware\\feed' => __DIR__ . '/../..' . '/app/Http/Middleware/feed.php',
+        'App\\Http\\Models\\reclamacoes' => __DIR__ . '/../..' . '/app/Http/Models/reclamacoes.php',
+        'App\\Models\\Cadastro' => __DIR__ . '/../..' . '/app/Models/Cadastro.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -1810,6 +1817,8 @@ class ComposerStaticInite98da5580333a41d1d2f6b337b1cf066
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
+        'LaravelLegends\\PtBrValidator\\Validator' => __DIR__ . '/..' . '/laravellegends/pt-br-validator/src/pt-br-validator/Validator.php',
+        'LaravelLegends\\PtBrValidator\\ValidatorProvider' => __DIR__ . '/..' . '/laravellegends/pt-br-validator/src/pt-br-validator/ValidatorProvider.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
