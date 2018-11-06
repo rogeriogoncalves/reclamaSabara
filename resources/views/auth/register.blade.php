@@ -24,8 +24,9 @@
                                 @endif
                             </div>
                         </div>
-
+                        <input type="text" data-mask="000.000.000-00"/>
                         <div class="form-group row">
+
                             <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
 
                             <div class="col-md-6">

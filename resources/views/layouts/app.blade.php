@@ -31,5 +31,8 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="/js/jquery.mask.js"></script>
+    <script src="/js/register.js"></script>
 </body>
 </html>
