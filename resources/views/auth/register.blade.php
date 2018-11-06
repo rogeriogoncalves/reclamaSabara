@@ -26,6 +26,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" value="{{ old('cpf') }}" required autofocus>
+
+                                @if ($errors->has('cpf'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('cpf') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">

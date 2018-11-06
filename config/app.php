@@ -153,6 +153,7 @@ return [
         /*
          * Application Service Providers...
          */
+        // Inclui classe para validação de cpf
         LaravelLegends\PtBrValidator\ValidatorProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
