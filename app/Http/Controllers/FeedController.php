@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Models\reclamacoes;
+use Illuminate\Support\Facades\DB;
 
 class FeedController extends Controller
 {
@@ -12,10 +13,10 @@ class FeedController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(reclamacoes $request)
+    public function index()
     {
-        // $query = 'SELECT * FROM reclamacoes;';
-        $reclamacoes = $request->all();
+        $reclamacoes = DB::table('users')->join('reclamacoes', 'users.id', '=', 'reclamacoes.idUsuario')
+            ->select( 'reclamacoes.*', 'users.name', 'users.photo')->get();
 
         return view('feed', compact('reclamacoes'));
     }

@@ -15,4 +15,5 @@
 Route::resource('/', 'FeedController')->middleware('auth');
 Route::resource('/reclamar', 'ReclamacaoController')->middleware('auth');
 Route::post('/cadastrareclamacao',"ReclamacaoController@store")->name('cadastrarReclamacao');
+Route::resource('/usuario', 'UserController')->middleware('auth');
 Auth::routes();

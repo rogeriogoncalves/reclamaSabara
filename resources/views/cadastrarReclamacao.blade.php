@@ -17,6 +17,16 @@
         <form class="form" method="post" action="{{route('cadastrarReclamacao')}}">
             {!! csrf_field() !!}
             <div class="form-group">
+                <p><b>Categoria:</b>
+                    <select name="categoria" class="custom-select">
+                        <option value="Educação">Educação</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Segurança">Segurança</option>
+                        <option value="Infraestrutura">Infraestrutura</option>
+                    </select>
+                </p>
+            </div>
+            <div class="form-group">
                 <p><b>Reclamação:</b><input type="text" name="conteudoReclamacao" placeholder="Reclamação" class="form-control" autofocus></p>
             </div>
             <div class="text-center">

@@ -48,8 +48,8 @@ class ReclamacaoController extends Controller
     {
         ///Pega todos os dados que vem do formulario e inclui o id do usuário logado
         $dataForm = $request->all();
-        $nomeUsuario = Auth::user()->name;
-        $dataForm = array_merge($dataForm, compact('nomeUsuario'));
+        $idUsuario = Auth::user()->id;
+        $dataForm = array_merge($dataForm, compact('idUsuario'));
         
         ///Valida os dados de acordo com as regras que criei na model
         ///Imprime as mensagens personalizadas de acordo com o que defini na model
@@ -84,7 +84,8 @@ class ReclamacaoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reclamacao = $this->cadastro->find($id);
+        return view('editarReclamacao', compact('reclamacao'));
     }
 
     /**
@@ -96,7 +97,15 @@ class ReclamacaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $reclamacao = $this->cadastro->find($id);
+        $update = $reclamacao->update([
+            'conteudoReclamacao' => $request->conteudoReclamacao,
+        ]);
+
+        if ($update)
+            return redirect()->action('FeedController@index');
+        else
+            return redirect()->back();
     }
 
     /**

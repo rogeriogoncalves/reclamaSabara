@@ -16,10 +16,12 @@ class CreateCadastroTable extends Migration
         Schema::create('reclamacoes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('conteudoReclamacao',140);
-            $table->string('nomeUsuario');
+            $table->string('categoria');
             $table->integer('rankingMais')->nullable(); 
             $table->integer('rankingMenos')->nullable();
+            $table->unsignedinteger('idUsuario');
             $table->timestamps();
+            $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade');
             
             $table->engine = 'InnoDB';
         });

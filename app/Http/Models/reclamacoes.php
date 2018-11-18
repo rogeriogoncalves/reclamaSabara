@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class reclamacoes extends Model
 {
-     protected $fillable = ['conteudoReclamacao', 'nomeUsuario', 'rankingMais', 'rankingMenos', 'create_at', 'update_at'];
+     protected $fillable = ['conteudoReclamacao', 'categoria', 'rankingMais', 'rankingMenos', 'idUsuario', 'create_at', 'update_at'];
     // protected $guarded = ['idUsuario']; 
     
         public $rules = [
