@@ -89,6 +89,16 @@ class ReclamacaoController extends Controller
     }
 
     /**
+     * Stores a thumbs up to the entry in database
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function storeThumbsUp($id)
+    {
+        dd($id);
+    }
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
