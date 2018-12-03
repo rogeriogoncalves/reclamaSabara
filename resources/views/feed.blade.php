@@ -17,7 +17,7 @@
 
                     <br>
 
-                    <a href="{{route('reclamar.storeThumbsUp', ['id' => $reclamacao->id])}}" class="btnThumbsUpIcon" aria-haspopup="false" aria-expanded="false">
+                    <a href="{{route('reclamar.storeThumbsUp', ['id' => $reclamacao->id , 'idUsuario' => $reclamacao->idUsuario])}}" class="btnThumbsUpIcon" aria-haspopup="false" aria-expanded="false">
                         <i class="far fa-thumbs-up"></i>
                         <span class="badge badge-pill badge-success notification">{{ $reclamacao->rankingMais }}</span>
                     </a>

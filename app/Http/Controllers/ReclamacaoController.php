@@ -5,22 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Models\reclamacoes;
+use App\Http\Models\thumbs;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class ReclamacaoController extends Controller
 {
     
-    private $cadastro;
+    private $cadastro, $thumbs;
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     
-    public function __construct(reclamacoes $cadastro)
+    public function __construct(reclamacoes $cadastro, thumbs $thumbs)
     {
         $this->cadastro = $cadastro;
+        $this->thumbs = $thumbs;
     }
     
     public function index()
@@ -94,12 +96,29 @@ class ReclamacaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function storeThumbsUp($id)
+    public function storeThumbsUp($idReclamacao,$idUsuario)
     {
-        $reclamacao = $this->cadastro->find($id);
-        $update = $reclamacao->update([
-            'rankingMais' => $reclamacao->rankingMais+1,
-        ]);
+        $reclamacao = $this->cadastro->find($idReclamacao);
+        
+        $rowsAffected = DB::table('thumbs')->select('*') 
+                    ->where ('idUsuario', $idUsuario) 
+                        ->where ('idReclamacao', $idReclamacao)->count();
+        if($rowsAffected == 0)
+        {
+            DB::insert('insert into thumbs (idUsuario, idReclamacao) values (?, ?)', [$idUsuario, $idReclamacao]);
+            $update = $reclamacao->update([
+                'rankingMais' => $reclamacao->rankingMais+1,
+
+            ]);
+        }
+
+        else 
+        {
+            DB::table('thumbs')->where('idUsuario', $idUsuario)->where('idReclamacao', $idReclamacao)->delete();
+            $update = $reclamacao->update([
+                'rankingMais' => $reclamacao->rankingMais-1,
+            ]);
+        }
 
         if ($update)
             return redirect()->action('FeedController@index');

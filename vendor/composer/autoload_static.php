@@ -355,6 +355,7 @@ class ComposerStaticInite98da5580333a41d1d2f6b337b1cf066
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\FeedController' => __DIR__ . '/../..' . '/app/Http/Controllers/FeedController.php',
         'App\\Http\\Controllers\\ReclamacaoController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReclamacaoController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
