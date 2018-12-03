@@ -103,6 +103,7 @@ class ReclamacaoController extends Controller
         $rowsAffected = DB::table('thumbs')->select('*') 
                     ->where ('idUsuario', $idUsuario) 
                         ->where ('idReclamacao', $idReclamacao)->count();
+
         if($rowsAffected == 0)
         {
             DB::insert('insert into thumbs (idUsuario, idReclamacao) values (?, ?)', [$idUsuario, $idReclamacao]);

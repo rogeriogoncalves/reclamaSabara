@@ -16,6 +16,8 @@
                     {{ $reclamacao->conteudoReclamacao }}
 
                     <br>
+                    <script> alert( {{  $reclamacao->idUsuario }} ) </script>
+                    <script> alert( 'n funciona pois o id do usuario está vinculado ao botão de thumbs up como o usuário que criou a reclamação e n o usuario logado' ) </script>
 
                     <a href="{{route('reclamar.storeThumbsUp', ['id' => $reclamacao->id , 'idUsuario' => $reclamacao->idUsuario])}}" class="btnThumbsUpIcon" aria-haspopup="false" aria-expanded="false">
                         <i class="far fa-thumbs-up"></i>
