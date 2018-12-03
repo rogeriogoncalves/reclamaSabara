@@ -15,7 +15,7 @@ class FeedController extends Controller
      */
     public function index()
     {
-        $reclamacoes = DB::table('users')->join('reclamacoes', 'users.id', '=', 'reclamacoes.idUsuario')
+        $reclamacoes = DB::table('users')->join('reclamacoes', 'users.id', '=', 'reclamacoes.idUsuario')->orderBy('rankingMais', 'DESC')
             ->select( 'reclamacoes.*', 'users.name', 'users.photo')->get();
 
         return view('feed', compact('reclamacoes'));

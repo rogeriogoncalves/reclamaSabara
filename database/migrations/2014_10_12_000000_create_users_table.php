@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('photo', 255)->default('images/perfil/user.jpg');
             $table->rememberToken();
             $table->timestamps();
+
+	    $table->engine = 'InnoDB';
         });
     }
 
