@@ -14,10 +14,19 @@
                     <p class="media-body pb-3 small mb-0 lh-125 border-bottom border-gray">
                         <strong class="d-block text-gray-dark"> {{$reclamacao->name}} </strong>
                     {{ $reclamacao->conteudoReclamacao }}
+
+                    <br>
+
+                    <a href="#" class="btnThumbsUpIcon" aria-haspopup="false" aria-expanded="false">
+                        <i class="far fa-thumbs-up"></i>
+                        <span class="badge badge-pill badge-success notification">{{ $reclamacao->rankingMais }}</span>
+                    </a>
+
                     <p class="message-detail pb-sm-4 small align-bottom bs-popover-bottom" style="margin-top: 4.5%;">
                         Data da reclamação: {{date('d/m/Y \à\s H:i:s', strtotime($reclamacao->created_at))}}
                     </p>
                     </p>
+                    
                     @if($reclamacao->idUsuario == Auth::user()->id)
                         <a href="{{route('reclamar.edit', ['reclamar' => $reclamacao->id])}}"
                            class="btn btn-danger align-top" style="margin-top: -2%; margin-left: -7%;">Editar</a>

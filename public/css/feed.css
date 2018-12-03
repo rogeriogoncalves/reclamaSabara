@@ -69,6 +69,18 @@ body {
     transition: all .3s ease;
 }
 
+/* Thumbs */
+
+.btnThumbsUpIcon
+{
+    font-size: 2em;
+}
+
+.badge-success.notification
+{
+    font-size: .5em;
+}
+
 /*----------------page-wrapper----------------*/
 
 .page-wrapper {
