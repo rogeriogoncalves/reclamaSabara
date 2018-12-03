@@ -96,7 +96,15 @@ class ReclamacaoController extends Controller
      */
     public function storeThumbsUp($id)
     {
-        dd($id);
+        $reclamacao = $this->cadastro->find($id);
+        $update = $reclamacao->update([
+            'rankingMais' => $reclamacao->rankingMais+1,
+        ]);
+
+        if ($update)
+            return redirect()->action('FeedController@index');
+        else
+            return redirect()->back();
     }
     /**
      * Update the specified resource in storage.
