@@ -17,4 +17,5 @@ Route::resource('/reclamar', 'ReclamacaoController')->middleware('auth');
 Route::post('/cadastrareclamacao',"ReclamacaoController@store")->name('cadastrarReclamacao');
 Route::resource('/usuario', 'UserController')->middleware('auth');
 Route::get('/thumbsUp/{id}{idUsuario}', 'ReclamacaoController@storeThumbsUp')->name('reclamar.storeThumbsUp');
+Route::get('/buscaReclamacao', 'ReclamacaoController@search')->name('reclamar.search');
 Auth::routes();

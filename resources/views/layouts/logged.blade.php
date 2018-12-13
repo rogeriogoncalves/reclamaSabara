@@ -64,12 +64,15 @@
             <div class="sidebar-search">
                 <div>
                     <div class="input-group">
-                        <input type="text" class="form-control search-menu" placeholder="Search...">
+                        <form method="get" action="{{route('reclamar.search')}}">
+                            {!! csrf_field() !!}
+                        <input type="text" class="form-control search-menu" placeholder="Buscar reclamação..." name="busca">
                         <div class="input-group-append">
-                                <span class="input-group-text">
+                            <button class="input-group-text">
                                     <i class="fa fa-search" aria-hidden="true"></i>
-                                </span>
+                            </button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>

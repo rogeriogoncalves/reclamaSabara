@@ -146,6 +146,14 @@ class ReclamacaoController extends Controller
             return redirect()->back();
     }
 
+    public function search(Request $request)
+    {
+        $reclamacoes = DB::table('users')->join('reclamacoes', 'users.id', '=', 'reclamacoes.idUsuario')->orderBy('rankingMais', 'DESC')
+            ->select( 'reclamacoes.*', 'users.name', 'users.photo', 'rankingMais')->where('conteudoReclamacao', 'like', '%'.$request->busca.'%')->get();
+
+        return view('feed', compact('reclamacoes'));
+    }
+
     /**
      * Remove the specified resource from storage.
      *
