@@ -127,6 +127,12 @@
                             <span class="badge badge-pill badge-primary">3</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{route('reclamar.myComplaints', ['usuario' => Auth::user()->id])}}">
+                            <i class="fa fa-folder"></i>
+                            <span>Minhas Reclamações</span>
+                        </a>
+                    </li>
                     <li class="sidebar-dropdown">
                         <a href="#">
                             <i class="far fa-gem"></i>
@@ -153,12 +159,6 @@
                         </div>
                     </li>
 
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-folder"></i>
-                            <span>Examples</span>
-                        </a>
-                    </li>
                     <li>
                         <a href="#">
                             <i class="fa fa-book"></i>

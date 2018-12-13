@@ -78,6 +78,14 @@ class ReclamacaoController extends Controller
         return view("cadastrarReclamacao");
     }
 
+    public function myComplaints($id)
+    {
+        $reclamacoes = DB::table('users')->join('reclamacoes', 'users.id', '=', 'reclamacoes.idUsuario')->orderBy('rankingMais', 'DESC')
+            ->select( 'reclamacoes.*', 'users.name', 'users.photo', 'rankingMais')->where('users.id', '=', $id)->get();
+
+        return view('minhasReclamacoes', compact('reclamacoes'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

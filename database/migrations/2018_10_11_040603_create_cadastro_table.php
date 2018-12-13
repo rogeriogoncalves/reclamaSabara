@@ -19,6 +19,7 @@ class CreateCadastroTable extends Migration
             $table->string('categoria');
             $table->integer('rankingMais')->default(0); 
             $table->integer('rankingMenos')->default(0);
+            $table->integer('denunciada')->default(0);
             $table->unsignedinteger('idUsuario');
             $table->timestamps();
             $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade');
