@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCadastroTable extends Migration
+class CreateThumbsDownTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,15 @@ class CreateCadastroTable extends Migration
      */
     public function up()
     {
-        Schema::create('reclamacoes', function (Blueprint $table) {
+        Schema::create('thumbsDown', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('conteudoReclamacao',140);
-            $table->string('categoria');
-            $table->integer('rankingMais')->default(0); 
-            $table->integer('rankingMenos')->default(0);
-            $table->integer('denunciada')->default(0);
-            $table->integer('flag')->default(0);
             $table->unsignedinteger('idUsuario');
+            $table->unsignedinteger('idReclamacao');
+            $table->longText('description')->nullable();
             $table->timestamps();
+
             $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade');
-            
+            $table->foreign('idReclamacao')->references('id')->on('reclamacoes')->onDelete('cascade');
             $table->engine = 'InnoDB';
         });
     }
@@ -36,6 +33,6 @@ class CreateCadastroTable extends Migration
      */
     public function down()
     {
-        ///Schema::dropIfExists('reclamasabara');
+        Schema::dropIfExists('thumbsDown');
     }
 }

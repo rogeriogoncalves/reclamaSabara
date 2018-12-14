@@ -108,13 +108,13 @@ class ReclamacaoController extends Controller
     {
         $reclamacao = $this->cadastro->find($idReclamacao);
         
-        $rowsAffected = DB::table('thumbs')->select('*') 
+        $rowsAffected = DB::table('thumbsUp')->select('*') 
                     ->where ('idUsuario', $idUsuario) 
                         ->where ('idReclamacao', $idReclamacao)->count();
 
         if($rowsAffected == 0)
         {
-            DB::insert('insert into thumbs (idUsuario, idReclamacao) values (?, ?)', [$idUsuario, $idReclamacao]);
+            DB::insert('insert into thumbsUp (idUsuario, idReclamacao) values (?, ?)', [$idUsuario, $idReclamacao]);
             $update = $reclamacao->update([
                 'rankingMais' => $reclamacao->rankingMais+1,
 
@@ -123,7 +123,7 @@ class ReclamacaoController extends Controller
 
         else 
         {
-            DB::table('thumbs')->where('idUsuario', $idUsuario)->where('idReclamacao', $idReclamacao)->delete();
+            DB::table('thumbsUp')->where('idUsuario', $idUsuario)->where('idReclamacao', $idReclamacao)->delete();
             $update = $reclamacao->update([
                 'rankingMais' => $reclamacao->rankingMais-1,
             ]);
@@ -134,6 +134,50 @@ class ReclamacaoController extends Controller
         else
             return redirect()->back();
     }
+
+    public function storeThumbsDown($idReclamacao,$idUsuario)
+    {
+        $description = 'conteudoReclamacao';
+
+        $reclamacao = $this->cadastro->find($idReclamacao);
+        
+        $rowsAffected = DB::table('thumbsDown')->select('*') 
+                    ->where ('idUsuario', $idUsuario) 
+                        ->where ('idReclamacao', $idReclamacao)->count();
+
+        if($rowsAffected == 0)
+        {
+            DB::insert('insert into thumbsDown (idUsuario, idReclamacao, description) values (?, ?, ?)', [$idUsuario, $idReclamacao, $description]);
+            $update = $reclamacao->update([
+                'rankingMenos' => $reclamacao->rankingMenos+1,
+
+            ]);
+        }
+
+        else 
+        {
+            DB::table('thumbsDown')->where('idUsuario', $idUsuario)->where('idReclamacao', $idReclamacao)->delete();
+            $update = $reclamacao->update([
+                'rankingMenos' => $reclamacao->rankingMenos-1,
+            ]);
+        }
+
+        $countThumbsDown = DB::table('thumbsDown')->select('*') 
+                    ->where ('idReclamacao', $idReclamacao)->count();
+
+        if($countThumbsDown >= 2)
+        {
+            DB::insert('insert into report ( idReclamacao) values (?)', [$idReclamacao]);
+            DB::table('reclamacoes')->where('id', $idReclamacao)->update(['flag' => 1]);
+        }
+
+        if ($update)
+            return redirect()->action('FeedController@index');
+        else
+            return redirect()->back();
+    }
+
+    
     /**
      * Update the specified resource in storage.
      *

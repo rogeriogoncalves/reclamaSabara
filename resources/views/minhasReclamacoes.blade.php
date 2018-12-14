@@ -24,7 +24,7 @@
                             <i class="far fa-thumbs-down"></i>
                             <span class="badge badge-pill badge-danger notification">{{ $reclamacao->rankingMenos }}</span>
                         </a>
-                        @if($reclamacao->denunciada == 1)
+                        @if($reclamacao->flag == 1)
                             <a class="btnThumbsUpIcon col-2" id="mouse-pass">
                                 <i class="fas fa-exclamation-triangle"></i>
                                 <span id="show-message" class="badge badge-pill badge-danger"> Esta reclamação está sob análise devido ao alto índice de

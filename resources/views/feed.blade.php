@@ -24,10 +24,35 @@
                                 <span class="badge badge-pill badge-success notification">{{ $reclamacao->rankingMais }}</span>
                             </a>
 
-                            <a href="#" class="btnThumbsUpIcon">
+                            
+
+                            <a data-toggle="modal" data-target="#myModal" class="btnThumbsUpIcon col-2" 
+                                aria-haspopup="false" aria-expanded="false">
                                 <i class="far fa-thumbs-down"></i>
                                 <span class="badge badge-pill badge-danger notification">{{ $reclamacao->rankingMenos }}</span>
                             </a>
+
+                                <!-- Modal -->
+                                <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" style = "margin-left: initial">&times;</button>
+                                        <h4 class="modal-title" style = "text-align: center">O que há de errado com a reclamação</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    <input type="text" name="conteudoReclamacao" class="form-control" autofocus>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                        <a href= "{{route('reclamar.storeThumbsDown', ['id' => $reclamacao->id , 'idUsuario' => Auth::user()->id])}}" type="button" class="btn btn-primary">Salvar Alterações</a>
+                                    </div>
+                                    </div>
+
+                                </div>
+                                </div>
 
                         <p class="message-detail pb-sm-4 small align-bottom bs-popover-bottom"
                            style="margin-top: 4.5%;">

@@ -366,6 +366,7 @@ class ComposerStaticInite98da5580333a41d1d2f6b337b1cf066
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Middleware\\feed' => __DIR__ . '/../..' . '/app/Http/Middleware/feed.php',
         'App\\Http\\Models\\reclamacoes' => __DIR__ . '/../..' . '/app/Http/Models/reclamacoes.php',
+        'App\\Http\\Models\\thumbs' => __DIR__ . '/../..' . '/app/Http/Models/thumbs.php',
         'App\\Models\\Cadastro' => __DIR__ . '/../..' . '/app/Models/Cadastro.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

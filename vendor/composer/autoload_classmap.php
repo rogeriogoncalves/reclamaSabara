@@ -27,6 +27,7 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Http\\Middleware\\feed' => $baseDir . '/app/Http/Middleware/feed.php',
     'App\\Http\\Models\\reclamacoes' => $baseDir . '/app/Http/Models/reclamacoes.php',
+    'App\\Http\\Models\\thumbs' => $baseDir . '/app/Http/Models/thumbs.php',
     'App\\Models\\Cadastro' => $baseDir . '/app/Models/Cadastro.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
